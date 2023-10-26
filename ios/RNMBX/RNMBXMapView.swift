@@ -898,6 +898,7 @@ extension RNMBXMapView: GestureManagerDelegate {
   
   @objc
   func doHandleTap(_ sender: UITapGestureRecognizer) {
+    self.calloutAnnotationManager.annotations.removeAll()
     let tapPoint = sender.location(in: self)
     pointAnnotationManager.handleTap(sender) { (_: UITapGestureRecognizer) in
       DispatchQueue.main.async {
